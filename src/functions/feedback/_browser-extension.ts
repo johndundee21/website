@@ -1,6 +1,5 @@
 import type { Response } from "@netlify/functions/src/function/response";
 import saveFeedbackInSheet from "./_save-to-spreadsheet";
-import sendFeedbackToSlack from "./_send-to-slack";
 
 interface Feedback {
   browser: string;
