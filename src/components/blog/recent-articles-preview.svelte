@@ -14,7 +14,7 @@
     <div class="posts-grid">
       {#each moreRecentPostsWithoutCurrent as post}
         <div class="posts-grid__item">
-          <PostPreview {post} isMostRecent headlineOrder="h3" />
+          <PostPreview {post} type="blog" isMostRecent headlineOrder="h3" />
         </div>
       {/each}
     </div>

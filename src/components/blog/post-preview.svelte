@@ -1,14 +1,13 @@
 <script lang="ts">
   import type { BlogPost } from "../../types/blog-post.type";
   import type { SocialMediaLinks } from "../../types/avatars.type";
-  import { page } from "$app/stores";
 
   import { authors } from "../../contents/authors";
   import Avatars from "../avatars.svelte";
 
   export let post: BlogPost;
   export let isMostRecent: boolean = false;
-  let type = $page.path.split("/")[1];
+  export let type: "blog" | "guides";
 
   const authorSocialMediaLinks: SocialMediaLinks = Object.entries(
     authors
