@@ -2,7 +2,7 @@ import type { Handler } from "@netlify/functions";
 import { submitFeedback as submitExtensionFeedback } from "./_browser-extension";
 import { submitFeedback as submitManualFeedback } from "./_manual";
 
-const feedbackTypeToFunctionMap = (type: string) => {
+const routeToHandler = (type: string) => {
   if (type === "docs" || type === "guides") {
     return submitManualFeedback;
   } else if (type === "browser-extension") {
@@ -15,7 +15,7 @@ const feedbackTypeToFunctionMap = (type: string) => {
 
 const handler: Handler = (event, _, callback) => {
   console.log(JSON.stringify(event.body));
-  const submitFeedback = feedbackTypeToFunctionMap(JSON.parse(event.body).type);
+  const submitFeedback = routeToHandler(JSON.parse(event.body).type);
 
   submitFeedback(event.body)
     .then((response) => callback(null, response))
