@@ -22,13 +22,11 @@
 
 <a
   class:active={isActivePage}
+  class:highlighted={isHighlighted}
   {href}
   on:click
   sveltekit:prefetch
   class="text-black text-p-large sm:text-dark-grey sm:hover:text-black sm:focus:text-black"
 >
   {label}
-  {#if isHighlighted}
-    <sup class="text-orange-800">*</sup>
-  {/if}
 </a>

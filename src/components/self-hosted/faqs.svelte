@@ -56,9 +56,8 @@
         You can either install <strong>Gitpod Self-Hosted</strong> on
         <strong>Google Cloud Platform</strong> or on
         <strong>K3s</strong>. See
-        <a href="/docs/self-hosted/latest/self-hosted"
-          >Self-Hosted Installation</a
-        > for more information.
+        <a href="/docs/self-hosted/latest">Self-Hosted Installation</a> for more
+        information.
       </p>
     </Faq>
     <Faq title="How can I pay?" {trackingContext}>

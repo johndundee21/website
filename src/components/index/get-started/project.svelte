@@ -70,6 +70,7 @@
 <a
   href={`https://gitpod.io#${githubUrl}`}
   target="_blank"
+  aria-label={alt}
   on:click={() =>
     window.analytics.track("example_workspace_clicked", {
       name: trackingName,

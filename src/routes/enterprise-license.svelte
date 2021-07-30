@@ -1,5 +1,6 @@
 <script lang="ts">
   import type { Form } from "../types/form.type";
+  import OpenGraph from "../components/open-graph.svelte";
 
   import SubmissionSuccess from "../components/submission-success.svelte";
   import { countryList } from "../contents/license-key";
@@ -162,6 +163,14 @@
     @apply text-gray-800;
   }
 </style>
+
+<OpenGraph
+  data={{
+    description: "Order a license key for Gitpod Self-Hosted.",
+    title: "Enterprise License",
+    norobots: true,
+  }}
+/>
 
 <header>
   <h1>Request License Key</h1>

@@ -108,7 +108,7 @@ export const projects: Project[] = [
     logo: "svg/projects/go.svg",
     title: "Go",
     githubUrl: "https://github.com/gitpod-io/example-golang-cli",
-    alt: "Go Language",
+    alt: "Go Programming Language",
     trackingName: "go",
   },
   {

@@ -9,10 +9,10 @@
   <div
     class="shadow-normal rounded-4xl bg-white p-small sm:p-x-large mb-x-large"
   >
-    <img src="imgSrc" alt="Gitpod founders group" class="rounded-4xl mx-auto" />
+    <img src={imgSrc} alt="Gitpod founders group" class="rounded-4xl mx-auto" />
     <p class="py-xx-small">Download founder group picture</p>
     <a
-      href="imgSrc"
+      href={imgSrc}
       on:click={() =>
         window.analytics.track("media_downloaded", {
           name: imgSrc,

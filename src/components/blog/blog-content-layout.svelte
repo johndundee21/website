@@ -12,5 +12,5 @@
   <slot />
 </PostContentLayout>
 
-<NewsletterSignup />
+<NewsletterSignup class="mx-auto mt-large mb-huge" />
 <RecentArticlesPreview />

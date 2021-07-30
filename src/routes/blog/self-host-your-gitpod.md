@@ -43,26 +43,19 @@ Gitpod Self-Hosted runs on Kubernetes and integrates via OAuth with GitHub Enter
 This way no additional user management is required and users get easy access to Git repositories based on the permissions already present in GitLab/GitHub.
 
 We operate gitpod.io on GCP, hence running Gitpod Self-Hosted on Google Cloud Platform (GCP) is a battle-tested solution.
-We consider running Gitpod Self-Hosted on vanilla Kubernetes in beta.
 
-## Easy Installation
+## Installation
 
-Installing Gitpod Self-Hosted on your own infrastructure works much like any other piece of kit running on Kubernetes.
-
-1. Clone the example configuration repo: `git clone https://github.com/gitpod-io/self-hosted`
-
-2. Adjust the configuration from the repository to your needs (with [ample documentation available](/docs/self-hosted/latest/self-hosted) to guide you).
-
-3. Install using [helm](https://helm.sh/): `helm install ... gitpod`
-
-The [vanilla Kubernetes setup](/docs/self-hosted/latest/install/install-on-kubernetes) will work most Kubernetes clusters.
-For Google Cloud Platform we provide an [automated installation script](/docs/self-hosted/latest/install/install-on-gcp-script).
+Installing Gitpod Self-Hosted on your own infrastructure works much like any other piece of kit running on Kubernetes. We have produced a series of [installation guides](/docs/self-hosted/latest/installation) will work most Kubernetes clusters.
 
 ## Pricing
 
 Gitpod Self-Hosted is free for up to three users. If you're a small shop that will get you up and running.
+
 If you need more, there is a [free one-month unlimited license](https://gitpod.io/selfhosted-trial) available.
+
 In case you need support running your PoC in-house please [email us](mailto:contact@gitpod.io) and we'll be happy to help.
+
 Our remodeled [community](https://community.gitpod.io/) will also fill with helpful tips and tricks regarding Gitpod Self-Hosted.
 
 We are absolutely thrilled to see Gitpod and its community growing.

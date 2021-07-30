@@ -43,7 +43,6 @@ form li {
 fieldset,
 [type="checkbox"] + label {
   display: flex;
-  gap: 1rem;
 }
 fieldset {
   flex-flow: row wrap;
@@ -63,15 +62,10 @@ select {
 }
 
 [type="checkbox"] + label::before {
-  content: "✔";
-  border: 1px solid var(--divider);
-  height: 2rem;
-  width: 2.5rem;
-  padding: 0.25rem;
-  border-radius: 0.25rem;
-  font-size: 1.5rem;
+  content: "";
+  @apply block h-6 rounded text-center mr-micro transition border border-solid border-divider;
+  flex: 0 0 24px;
   line-height: 1.1;
-  text-align: center;
 }
 
 [type="checkbox"] + label::before,
@@ -90,8 +84,11 @@ select {
 [type="checkbox"]:checked + label::before,
 [type="radio"]:checked + label {
   color: var(--black);
-  border: 1px solid #ffb45b;
-  background: #ffb45b;
+  @apply border border-solid border-orange-900 bg-orange-900;
+}
+[type="checkbox"]:checked + label::before {
+  background-image: url("/tick-dark.svg");
+  @apply bg-center;
 }
 [type="checkbox"] + label:hover::before,
 [type="checkbox"] + label:focus::before,
@@ -99,9 +96,15 @@ select {
 [type="radio"]:focus + label {
   border-color: var(--dark-grey);
 }
-.btn-conversion:disabled,
-.btn-primary:disabled {
+[type="radio"]:checked + label {
+  @apply border-orange-900;
+}
+[class|="btn"]:disabled {
   background-color: var(--sand-dark);
   color: var(--dark-gray);
   cursor: default;
+}
+
+::placeholder {
+  @apply text-light-grey !important;
 }

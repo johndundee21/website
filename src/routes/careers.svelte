@@ -10,6 +10,8 @@
   import { careers, perks } from "../contents/careers";
   import { onMount } from "svelte";
   import Section from "../components/section.svelte";
+  import StructuredData from "../components/careers/structured-data.svelte";
+  import { CAREER_EMAIL } from "../utils/constants";
 
   let selectedCareer;
 
@@ -181,11 +183,11 @@
     <p>
       If there isn't an open position for you but you'd still want to work at
       Gitpod let us know via <a
-        href="mailto:career@gitpod.io"
+        href="mailto:{CAREER_EMAIL}"
         on:click={() =>
           window.analytics.track("hiring_interaction", {
             subtype: "email_clicked",
-          })}>career@gitpod.io</a
+          })}>{CAREER_EMAIL}</a
       >
     </p>
 
@@ -221,13 +223,16 @@
               >
             </div>
           </button>
+          <StructuredData {career}/>
         </li>
       {/each}
     </ul>
 
     <CareerModal
       career={selectedCareer}
-      on:close={() => (selectedCareer = null)}
+      on:close={() => {
+        selectedCareer = null;
+      }}
     />
   </div>
 </Section>

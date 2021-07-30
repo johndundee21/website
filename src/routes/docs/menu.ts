@@ -23,6 +23,9 @@ export const MENU: MenuEntry[] = [
     M("Ruby on Rails", "quickstart/ruby-on-rails"),
     M("Rust", "quickstart/rust"),
     M("Svelte", "quickstart/svelte"),
+    M("Datasette", "quickstart/datasette"),
+    M("Nix", "quickstart/nix"),
+    M("Haskell", "quickstart/haskell"),
   ]),
   M("Getting Started", "getting-started"),
   M("Configure", "configure", [
@@ -49,28 +52,13 @@ export const MENU: MenuEntry[] = [
     M("Bitbucket", "bitbucket-integration"),
     M("Browser Extension", "browser-extension"),
   ]),
-  M("Gitpod Self-Hosted", "self-hosted/latest/self-hosted", [
-    M(
-      "Install on Google Cloud Platform",
-      "self-hosted/latest/install/install-on-gcp-script"
-    ),
-    M(
-      "Install on Amazon Web Services",
-      "self-hosted/latest/install/install-on-aws-script"
-    ),
-    M(
-      "Install on self-managed Kubernetes",
-      "self-hosted/latest/install/install-on-kubernetes"
-    ),
-    M("Configure Ingress", "self-hosted/latest/install/configure-ingress"),
-    M("Configure a Database", "self-hosted/latest/install/database"),
-    M(
-      "Configure a Docker Registry",
-      "self-hosted/latest/install/docker-registry"
-    ),
-    M("Configure Storage", "self-hosted/latest/install/storage"),
-    M("Configure Nodes", "self-hosted/latest/install/nodes"),
-    M("Configure Workspaces", "self-hosted/latest/install/workspaces"),
+  M("Gitpod Self-Hosted", "self-hosted/latest", [
+    M("Installation", "self-hosted/latest/installation"),
+    M("Configuration", "self-hosted/latest/configuration"),
+    M("Administration", "self-hosted/latest/administration"),
+    M("Troubleshooting", "self-hosted/latest/troubleshooting"),
+    M("Updating", "self-hosted/latest/updating"),
+    M("Releases", "self-hosted/latest/releases"),
   ]),
   M("References", "references", [
     M(".gitpod.yml", "references/gitpod-yml"),

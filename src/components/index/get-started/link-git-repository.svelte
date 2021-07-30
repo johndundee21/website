@@ -35,11 +35,11 @@
       }
 
       &--bitbucket {
-        background: #2684ff;
+        background: #265583;
       }
 
       &--gitlab {
-        background: #fc6d26;
+        background: #5e48ba;
       }
     }
 

@@ -13,15 +13,19 @@ By default, Gitpod uses a [standard Docker image](https://github.com/gitpod-io/w
 
 If this image does not include the tools you need for your project, you can provide a public Docker image or your own [Dockerfile](#using-a-dockerfile). This provides you with the flexibility to install the tools & libraries required for your project.
 
+> **Note:** Gitpod supports Debian/Ubuntu based docker images. Alpine images do not include [libgcc and libstdc++](https://code.visualstudio.com/docs/remote/linux#_tips-by-linux-distribution) which breaks Visual Studio Code. See also [Issue #3356](https://github.com/gitpod-io/gitpod/issues/3356).
+
 ## Configure a public Docker image
 
 You can define a public Docker image in your `.gitpod.yml` file with the following configuration:
 
 ```yaml
-image: node:alpine
+image: node:buster
 ```
 
 The official Gitpod Docker images are hosted on <a href="https://hub.docker.com/u/gitpod/" target="_blank">Docker Hub</a>.
+
+You can find the source code for these images in <a href="https://github.com/gitpod-io/workspace-images/" target="_blank">this GitHub repository</a>.
 
 ## Configure a custom Dockerfile
 
@@ -34,14 +38,20 @@ image:
 
 Next, create a `.gitpod.Dockerfile` file at the root of your project. The syntax is the regular `Dockerfile` syntax as <a href="https://docs.docker.com/engine/reference/builder/" target="_blank">documented on docs.docker.com</a>.
 
-> Note: Currently, Gitpod only supports Debian/Ubuntu or Alpine based images.
-
 A good starting point for creating a custom `.gitpod.Dockerfile` is the
-<a href="https://hub.docker.com/r/gitpod/workspace-full/" target="_blank">gitpod/workspace-full</a> image. It already contains all the tools necessary to work with all languages Gitpod supports.
-You can find the source code in <a href="https://github.com/gitpod-io/workspace-images/" target="_blank">this GitHub repository</a>.
+<a href="https://github.com/gitpod-io/workspace-images/blob/master/full/Dockerfile" target="_blank">gitpod/workspace-full</a> image as it already contains all the tools necessary to work with all languages Gitpod supports.
 
 ```dockerfile
 FROM gitpod/workspace-full
+
+# Install custom tools, runtime, etc.
+RUN brew install fzf
+```
+
+If you want a base image without the default tooling installed then use the <a href="https://github.com/gitpod-io/workspace-images/blob/master/base/Dockerfile" target="_blank">gitpod/workspace-base</a> image.
+
+```dockerfile
+FROM gitpod/workspace-base:latest
 
 # Install custom tools, runtime, etc.
 RUN brew install fzf

@@ -10,7 +10,7 @@ title: Subscriptions
 # Subscriptions
 
 In order to use Gitpod, a user has to have a valid subscription. If you are not aware of that, you
-are likely using the free subscription. See our [homepage](https://www.gitpod.io) for possible
+are likely using the free subscription. See our [pricing page](/pricing) for possible
 subscription plans.
 
 Our internal calculation unit is _Gitpod hours_. One Gitpod hour allows you to use one workspace for
@@ -31,7 +31,7 @@ the end of the prior subscription.
 We may introduce other types of additional Gitpod hours (expiring or not) in the future. When you
 have different kinds of credits, the one with the earliest expiry date will be used first.
 
-You can see your current amount of Gitpod hours in the [usage page](https://gitpod.io/usage)
+You can see your current amount of Gitpod hours in the [plans page](https://gitpod.io/usage)
 or in the IDE by clicking your avatar and choosing _Account_. You will be warned multiple times when you are getting
 close to running out of Gitpod hours. As soon as your credits are used up, your workspaces will be
 closed automatically. You can still manage your account, but you will not be able to start any

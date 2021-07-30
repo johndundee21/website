@@ -16,6 +16,13 @@
       ? "5aJzy2ASNbqx8I0kwppRflDZpL7pS1GO" // Website Production
       : "Xe5zR3MbnyxHsveZr4HvrY35PL9iT0EH"; // Website Staging
 
+  const isDoNotTrack = () =>
+    typeof navigator !== "undefined" &&
+    (parseInt(navigator.doNotTrack) === 1 ||
+      parseInt(window.doNotTrack) === 1 ||
+      parseInt(navigator.msDoNotTrack) === 1 ||
+      navigator.doNotTrack === "yes");
+
   onMount(async () => {
     // Create a queue, but don't obliterate an existing one!
     var analytics = (window.analytics = window.analytics || []);
@@ -88,9 +95,15 @@
     analytics._writeKey = writeKey;
     // Add a version to keep track of what's in the wild.
     analytics.SNIPPET_VERSION = "4.13.2";
-    // Load Analytics.js with your key, which will automatically
-    // load the tools you've enabled for your account. Boosh!
-    analytics.load(writeKey);
+
+    if (isDoNotTrack()) {
+      analytics.initialize = true;
+      // All tracking calls will only trigger a stub.
+    } else {
+      // Load Analytics.js with your key, which will automatically
+      // load the tools you've enabled for your account. Boosh!
+      analytics.load(writeKey);
+    }
 
     // Track first page
     analytics.page();

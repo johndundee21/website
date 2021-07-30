@@ -7,7 +7,7 @@ export const pricingPlans: Pricing[] = [
     price: "Free",
     features: ["Unlimited Users", "Public Repos", "Private Repos"],
     btnText: "Install now",
-    btnHref: "/docs/self-hosted/latest/self-hosted",
+    btnHref: "/docs/self-hosted/latest",
     trackingName: "free",
   },
   {

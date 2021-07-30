@@ -74,7 +74,7 @@
   }
 </style>
 
-<div class="pb-8 bg-gray-100 text-p-xsmall">
+<div class="pb-8 bg-gray-100 text-p-footer">
   <footer
     class="footer py-large m-auto px-xx-small md:max-w-3xl md:py-small md:px-xx-small"
   >
@@ -142,7 +142,7 @@
         <li>Company</li>
         <li><a href="/about">About</a></li>
         <li>
-          <a href="/careers">Careers<sup class="text-orange-800">*</sup></a>
+          <a href="/careers" class="highlighted">Careers</a>
         </li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/media-kit">Media Kit</a></li>

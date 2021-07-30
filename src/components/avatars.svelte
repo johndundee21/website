@@ -63,6 +63,7 @@
   {#each trimmedUsernames as username}
     <a
       href={getSocialMediaLink(username)}
+      target="_blank"
       class:showAvatar
       class="no-underline transition-none {socialMediaLinkClasses}"
     >

@@ -1,5 +1,16 @@
 <script lang="ts">
+  import { showHideOverflowY } from "../../../utils/helper";
+
   import menuState from "./state";
+
+  const handleToggle = () => {
+    $menuState = !$menuState;
+    if ($menuState) {
+      showHideOverflowY(true);
+    } else {
+      showHideOverflowY(false);
+    }
+  };
 </script>
 
 <style type="text/postcss">
@@ -11,7 +22,7 @@
 </style>
 
 <button
-  on:click={() => ($menuState = !$menuState)}
+  on:click={handleToggle}
   aria-label="Show / hiide nav items"
   class="flex justify-center items-center h-6 w-12 rounded-xl bg-black"
 >

@@ -49,7 +49,7 @@ More on [prebuilds](https://www.gitpod.io/docs/prebuilds).
 
 ### 🔒 Secure
 
-We are living in a remote world, where copies of your source code stored locally on countless unsecure machines and networks is considered bad practice. With Gitpod your code stays in the cloud only accessible from a secure browser connection. Gitpod works on any machine such as your Chromebook or iPad. All you need is a browser. Gitpod natively integrates with GitHub, GitLab and Bitbucket and creates one source of truth for your intellectual property. Gitpod is built with security in mind and currently in the process of becoming SOC 2 and ISO 27001 compliant.
+We are living in a remote world, where copies of your source code stored locally on countless unsecure machines and networks is considered bad practice. With Gitpod your code stays in the cloud only accessible from a secure browser connection. Gitpod works on any machine such as your Chromebook or iPad. All you need is a browser. Gitpod natively integrates with GitHub, GitLab and Bitbucket and creates one source of truth for your intellectual property. Gitpod is built with security in mind and currently in the process of becoming SOC 2 compliant.
 
 ## Next Steps
 

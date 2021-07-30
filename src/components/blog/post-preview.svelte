@@ -1,22 +1,13 @@
 <script lang="ts">
-  import type { BlogPost } from "../../types/blog-post.type";
-  import type { SocialMediaLinks } from "../../types/avatars.type";
+  import { authorSocialMediaLinks } from "../../contents/authors";
 
-  import { authors } from "../../contents/authors";
+  import type { BlogPost } from "../../types/blog-post.type";
   import Avatars from "../avatars.svelte";
 
   export let post: BlogPost;
   export let isMostRecent: boolean = false;
   export let type: "blog" | "guides";
 
-  const authorSocialMediaLinks: SocialMediaLinks = Object.entries(
-    authors
-  ).reduce((displayNames, [username, profile]) => {
-    displayNames[
-      username
-    ] = `https://twitter.com/${profile.socialProfiles.twitter}`;
-    return displayNames;
-  }, {});
   export let headlineOrder: "h3";
 </script>
 

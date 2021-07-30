@@ -44,7 +44,7 @@ We are currently helping the GitLab team <a class="no-nowrap" href="https://gitl
 
 The Gitpod integration is already live on gitlab.com today and is going to be part of [GitLab&nbsp;13.5](https://gitlab.com/gitlab-com/www-gitlab-com/-/merge_requests/61933) which is released on October 22nd. At that point, you’ll be able to connect your GitLab self-managed installation to gitpod.io, through a new feature that lets you register additional Git providers.
 
-Furthermore, you can [self-host Gitpod](https://www.gitpod.io/self-hosted/) (which is [open source](https://github.com/gitpod-io/gitpod)) on your own Kubernetes cluster and configure it with your GitLab instance. We have convenient installation scripts for GCP and AWS.
+Furthermore, you can [self-host Gitpod](https://www.gitpod.io/self-hosted) (which is [open source](https://github.com/gitpod-io/gitpod)) on your own Kubernetes cluster and configure it with your GitLab instance. We have convenient installation scripts for GCP and AWS.
 
 <h2 class="h1">What’s next?</h2>
 

@@ -37,7 +37,7 @@ module.exports = {
 
   // options passed to svelte.preprocess (https://svelte.dev/docs#svelte_preprocess)
   preprocess: [
-    sveltePreprocess({ postcss: true, scss: true }),
+    sveltePreprocess({ postcss: true, scss: true, preserve: ['ld+json'], }),
     mdsvex({
       extensions: [".md"],
       layout: {

@@ -8,9 +8,17 @@
 <script lang="ts">
   import type { Changelog } from "../../types/changelog.type";
   import OpenGraph from "../../components/open-graph.svelte";
+  import NewsletterSignup from "../../components/blog/newsletter-signup.svelte";
   import "../../assets/markdown-commons.scss";
+  import Modal from "../../components/modal.svelte";
 
   export let changelogEntries: Changelog[];
+
+  let isNewsLetterFormShown: boolean = false;
+
+  const handleClose = () => {
+    isNewsLetterFormShown = false;
+  };
 </script>
 
 <style type="text/postcss">
@@ -48,7 +56,7 @@
   <header class="w-full mb-x-large md:w-8/12 md:mb-xx-large">
     <h1 class="mt-x-large mb-macro md:mt-xx-large">Changelog</h1>
     <p>Gitpod product improvements and updates</p>
-    <p>
+    <p class="mt-micro">
       <a
         href="https://www.twitter.com/gitpod"
         rel="noopener"
@@ -59,6 +67,12 @@
           })}
         class="btn-primary">Follow us on Twitter</a
       >
+      <button
+        class="btn-secondary"
+        on:click={() => (isNewsLetterFormShown = true)}
+      >
+        Signup for the Newsletter
+      </button>
     </p>
   </header>
 </div>
@@ -92,3 +106,7 @@
     </p>
   </div>
 </div>
+
+<Modal isOpen={isNewsLetterFormShown} on:close={handleClose}>
+  <NewsletterSignup />
+</Modal>

@@ -1,3 +1,5 @@
+import type { SocialMediaLinks } from "src/types/avatars.type";
+
 export type Author = {
   name: string;
   socialProfiles: {
@@ -177,3 +179,12 @@ export const authors: { [idx: string]: Author } = {
       "Robert loves to code and lives off-grid... although the other way around is probably more accurate. Engineering systems of all shapes and sizes with many different teams highlighted the need for Gitpod's blazingly fast, ephemeral and secure development environments time and time again - he is helping make that happen.",
   },
 };
+
+export const authorSocialMediaLinks: SocialMediaLinks = Object.entries(
+  authors
+).reduce((displayNames, [username, profile]) => {
+  displayNames[
+    username
+  ] = profile.socialProfiles.twitter ? `https://twitter.com/${profile.socialProfiles.twitter}` : profile.socialProfiles.linkedin ? `https://www.linkedin.com/in/${profile.socialProfiles.linkedin}` : `https://github.com/${profile.socialProfiles.github}`;
+  return displayNames;
+}, {});

@@ -6,6 +6,7 @@
   import menuState from "./mobile-menu/state";
   import LoginButton from "./login-button.svelte";
   import Logo from "../svgs/logo.svelte";
+  import { showHideOverflowY } from "../../utils/helper";
 
   const navItems = [
     {
@@ -27,11 +28,11 @@
     {
       href: "/changelog",
       label: "Changelog",
+      isHighlighted: true,
     },
     {
       href: "/careers",
       label: "We're hiring",
-      isHighlighted: true,
     },
   ];
 </script>
@@ -62,7 +63,10 @@
       on:contextmenu|preventDefault={() => goto("/media-kit")}
       href="/"
       aria-label="Gitpod"
-      on:click={() => ($menuState = !menuState)}
+      on:click={() => {
+        $menuState = !menuState;
+        showHideOverflowY(true);
+      }}
     >
       <Logo />
     </a>

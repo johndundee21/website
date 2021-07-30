@@ -1,3 +1,15 @@
+<script lang="ts" context="module">
+  import { dev } from "$app/env";
+  export const load = () => {
+    return dev
+      ? {}
+      : {
+          status: 301,
+          redirect: "/",
+        };
+  };
+</script>
+
 <style lang="scss">
   // DO NOT COPY THIS! For reference only.
   // The colors will automatically update if the variable values update.

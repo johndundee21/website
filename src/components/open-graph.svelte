@@ -10,6 +10,7 @@
     title,
     type = "website",
     imageTwitter = "images/twitter-preview.jpg",
+    norobots = false,
   } = data || {};
 
   const url = `https://${$page.host}${$page.path}`;
@@ -22,6 +23,10 @@
     content="dev environment, development environment, devops, cloud ide, github ide, gitlab ide, javascript, online ide, web ide, code review"
   />
   <meta name="description" content={description} />
+
+  {#if norobots}
+    <meta name="robots" content="noindex" />
+  {/if}
 
   <!-- https://ogp.me -->
   <meta property="og:image" content="https://www.gitpod.io/{image}" />

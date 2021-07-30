@@ -29,11 +29,12 @@ Your project's `.gitpod.yml` is updated automatically and lists the given extens
 
 Here is an example of what a `.gitpod.yml` with installed extensions may look like:
 
-```yml
+```yaml
 vscode:
   extensions:
-    - scala-lang.scala
-    - scalameta.metals
+    - svelte.svelte-vscode
+    - bradlc.vscode-tailwindcss@0.6.11
+    - https://example.com/abc/releases/extension-0.26.0.vsix
 ```
 
 You can share the installed extensions with your team by committing the `.gitpod.yml` change and pushing it to your Git repository.

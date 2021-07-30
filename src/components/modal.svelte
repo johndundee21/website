@@ -1,7 +1,19 @@
 <script lang="ts">
-  import { createEventDispatcher, tick } from "svelte";
+  import { showHideOverflowY } from "../utils/helper";
+
+  import { createEventDispatcher } from "svelte";
 
   export let isOpen = false;
+
+  $: {
+    if (typeof document !== "undefined") {
+      if (isOpen) {
+        showHideOverflowY(true);
+      } else {
+        showHideOverflowY(false);
+      }
+    }
+  }
 
   const dispatch = createEventDispatcher();
 
@@ -30,14 +42,16 @@
 <svelte:window on:keydown={handleKeydown} />
 
 {#if isOpen}
-  <div class="modal" on:click={closeModal}>
-    <div class="content text-blob" on:click={(e) => e.stopPropagation()}>
+  <div class="modal flex justify-center items-center" on:click={closeModal}>
+    <div class="flex justify-center items-center relative">
       <button
+        class="absolute right-6 top-6 h-3 w-3 z-10"
         bind:this={closeEl}
         aria-label="close this popup"
         on:click={closeModal}
-        ><img alt="Close" role="presentation" src="/x.svg" /></button
       >
+        <img alt="Close" role="presentation" src="/x.svg" />
+      </button>
       <slot />
     </div>
   </div>

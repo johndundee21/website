@@ -1,7 +1,7 @@
 <script lang="ts">
   import Avatars from "./avatars.svelte";
   import OpenGraph from "./open-graph.svelte";
-  import { authors } from "../contents/authors";
+  import { authors, authorSocialMediaLinks } from "../contents/authors";
   import "../assets/markdown-commons.scss";
 
   export let baseUrl: string;
@@ -31,23 +31,27 @@
     {}
   );
 
-  const authorSocialMediaLinks = Object.entries(authors).reduce(
-    (displayNames, [username, profile]) => {
-      displayNames[
-        username
-      ] = `https://twitter.com/${profile.socialProfiles.twitter}`;
-      return displayNames;
-    },
-    {}
-  );
+  const hasATwitterProfile = (author) =>
+    !!authors[author].socialProfiles.twitter;
+
+  const writers = author.split(", ");
+
+  const renderTwitterHandles = () => {
+    let result = writers.reduce(
+      (acc, current) =>
+        acc +
+        (hasATwitterProfile(current) ? `@${current}` : authors[current].name) +
+        ", ",
+      ""
+    );
+    result = result.substring(0, result.length - 2);
+    return result;
+  };
 
   const socialLinks = [
     {
       href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-        `${title} by ${author
-          .split(", ")
-          .map((username) => "@" + authors[username].socialProfiles.twitter)
-          .join(", ")} ${baseUrl}${slug}`
+        `${title} by ${renderTwitterHandles()} ${baseUrl}${slug}`
       )}`,
       alt: "Twitter",
       icon: "/svg/brands/twitter.svg",
