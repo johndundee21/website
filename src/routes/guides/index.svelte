@@ -25,6 +25,7 @@
   data={{
     description: "Follow these guides to use Gitpod with any project",
     title: "Guides",
+    norobots: true
   }}
 />
 

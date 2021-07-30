@@ -6,6 +6,7 @@
 <PostContentLayout
   imagesDirectoryName="guides"
   baseUrl="https://www.gitpod.io/guides/"
+  norobots={true}
   {...$$restProps}
 >
   <slot />

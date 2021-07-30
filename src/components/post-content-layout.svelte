@@ -6,6 +6,7 @@
 
   export let baseUrl: string;
   export let imagesDirectoryName: string;
+  export let norobots: boolean;
 
   const {
     date,
@@ -79,6 +80,7 @@
     type: "article",
     image: `images/${imagesDirectoryName}/${slug}/${image}`,
     imageTwitter: `images/${imagesDirectoryName}/${slug}/${image}`,
+    norobots: norobots,
   }}
 />
 <div class="post content-blog">

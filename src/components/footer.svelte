@@ -110,7 +110,7 @@
         <li><a href="/screencasts">Screencasts</a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/docs">Documentation</a></li>
-        <li><a href="/guides">Guides</a></li>
+        <!-- <li><a href="/guides">Guides</a></li> -->
         <li>
           <a
             href="https://github.com/gitpod-io/gitpod/issues/new?template=bug_report.md"
